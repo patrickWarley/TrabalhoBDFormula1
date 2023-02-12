@@ -1,0 +1,9 @@
+SELECT surname, forename, dob as data_nascimento, nationality, n_corridas FROM drivers JOIN
+(
+    SELECT driverId ,count(driverId)as n_corridas 
+    FROM driverstandings 
+    GROUP BY driverId
+) as n_corridas_pilotos
+ON n_corridas_pilotos.driverId = drivers.driverId
+ORDER by n_corridas DESC
+LIMIT 5;
