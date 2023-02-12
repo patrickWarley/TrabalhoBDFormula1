@@ -13,4 +13,14 @@ JOIN drivers as p
 ON p.driverId = pilotos2017.driverId;
 
 
-SELECT p.driverId,p.forename, p.surname, p.dob, p.nationality FROM( SELECT DISTINCT driverId FROM driverstandings as posicoes JOIN ( SELECT * FROM races AS r WHERE r.year = 2017 ) AS corridas2017 ON posicoes.raceId = corridas2017.raceId ) AS pilotos2017 JOIN drivers as p ON p.driverId = pilotos2017.driverId;
+SELECT p.driverId,p.forename, p.surname, p.dob, p.nationality 
+FROM( 
+	SELECT DISTINCT driverId 
+	FROM driverstandings as posicoes 
+	JOIN ( 
+		SELECT * 
+		FROM races AS r 
+		WHERE r.year = 2017 
+	) AS corridas2017 
+	ON posicoes.raceId = corridas2017.raceId ) AS pilotos2017 
+JOIN drivers as p ON p.driverId = pilotos2017.driverId;
