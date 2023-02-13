@@ -13,7 +13,7 @@ JOIN drivers as p
 ON p.driverId = pilotos2017.driverId;
 
 
-SELECT p.driverId,p.forename, p.surname, p.dob, p.nationality, ('2017-31-12'-p.dob) as idade
+SELECT p.driverId,p.forename, p.surname, p.dob, p.nationality 
 FROM( 
 	SELECT DISTINCT driverId 
 	FROM driverstandings as posicoes 
