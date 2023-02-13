@@ -1,0 +1,1 @@
+SELECT country as pais,count(*) as N_circuits FROM circuits group by country;

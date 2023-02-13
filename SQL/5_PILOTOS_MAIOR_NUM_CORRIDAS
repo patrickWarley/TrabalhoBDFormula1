@@ -1,4 +1,5 @@
-SELECT surname, forename, dob as data_nascimento, nationality, n_corridas FROM drivers JOIN
+SELECT surname, forename, dob as data_nascimento, nationality, n_corridas FROM drivers 
+JOIN
 (
     SELECT driverId ,count(driverId)as n_corridas 
     FROM driverstandings 
